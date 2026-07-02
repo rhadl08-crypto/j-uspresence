@@ -21,7 +21,7 @@ export async function composeQrCard(uniqueId: string): Promise<Buffer> {
   });
 
   // 2. 배경 이미지 로드 경로
-  const bgPath = path.join(process.cwd(), BG_IMAGE_PATH);
+  const bgPath = path.join(process.cwd(), 'public', 'qr-bg.png');
 
   // 3. 배경 위에 QR 합성 + 캔버스 크기 고정
   const composedPng = await sharp(bgPath)
