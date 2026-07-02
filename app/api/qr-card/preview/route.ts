@@ -17,7 +17,7 @@ export async function GET(req: NextRequest) {
 
   try {
     const jpegBuffer = await composeQrCard(uniqueId);
-    return new NextResponse(jpegBuffer, {
+    return new NextResponse(jpegBuffer as any, {
       headers: {
         'Content-Type': 'image/jpeg',
         'Content-Length': String(jpegBuffer.length),
